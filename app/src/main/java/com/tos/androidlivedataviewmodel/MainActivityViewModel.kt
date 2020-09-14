@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModel
 class MainActivityViewModel : ViewModel() {
     var counter: Int = 0;
     var timerFinished = MutableLiveData<Boolean>()
+    var userInoutValue = MutableLiveData<Long>()
     fun addValue() {
         counter++
     }
@@ -24,7 +25,7 @@ class MainActivityViewModel : ViewModel() {
     }
 
     fun startTimer() {
-        timer = object : CountDownTimer(10000, 1000) {
+        timer = object : CountDownTimer(userInoutValue.value!!, 1000) {
             override fun onFinish() {
                 timerFinished.value = true
             }

@@ -28,15 +28,20 @@ class MainActivity : AppCompatActivity() {
             tvTimer.text = it.toString()
         })
         btnStart.setOnClickListener {
-            edTimer.text.toString()
-            viewModel.startTimer()
+            if (edTimer.text.toString().isEmpty() || edTimer.text.toString().length < 4) {
+                Toast.makeText(this, "Please Enter a Valid Number", Toast.LENGTH_LONG).show()
+            } else {
+                viewModel.userInoutValue.value = edTimer.text.toString().toLong()
+                viewModel.startTimer()
+
+            }
         }
 
         btnStop.setOnClickListener { viewModel.cancelTimer() }
 
         viewModel.timerFinished.observe(this, Observer {
             if (it) {
-                Toast.makeText(this, "Timer Finished", Toast.LENGTH_LONG)
+                Toast.makeText(this, "Timer Finished", Toast.LENGTH_LONG).show()
             }
         })
     }
