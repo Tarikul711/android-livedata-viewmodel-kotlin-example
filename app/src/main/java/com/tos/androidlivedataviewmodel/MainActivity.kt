@@ -14,11 +14,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var viewModel =
+        val viewModel =
             ViewModelProvider(this, ViewModelFactory()).get(MainActivityViewModel::class.java)
-        textView.text = "0"
+        textView.text = viewModel.counter.toString()
         btnAdd.setOnClickListener {
-
+            viewModel.addValue()
+            textView.text = viewModel.counter.toString()
         }
     }
 }
