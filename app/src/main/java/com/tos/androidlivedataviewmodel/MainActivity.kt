@@ -23,15 +23,21 @@ class MainActivity : AppCompatActivity() {
             textView.text = viewModel.counter.toString()
         }
 
-        viewModel.startTimer()
+
         viewModel.seconds().observe(this, Observer {
             tvTimer.text = it.toString()
         })
         btnStart.setOnClickListener {
-
+            edTimer.text.toString()
+            viewModel.startTimer()
         }
 
-        btnStop.setOnClickListener { }
+        btnStop.setOnClickListener { viewModel.cancelTimer() }
 
+        viewModel.timerFinished.observe(this, Observer {
+            if (it) {
+                Toast.makeText(this, "Timer Finished", Toast.LENGTH_LONG)
+            }
+        })
     }
 }
