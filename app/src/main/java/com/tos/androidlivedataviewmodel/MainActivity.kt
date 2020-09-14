@@ -3,6 +3,7 @@ package com.tos.androidlivedataviewmodel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tos.android_retrofit_mvvm_jetpack_kotlin.ui.base.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,5 +22,16 @@ class MainActivity : AppCompatActivity() {
             viewModel.addValue()
             textView.text = viewModel.counter.toString()
         }
+
+        viewModel.startTimer()
+        viewModel.seconds().observe(this, Observer {
+            tvTimer.text = it.toString()
+        })
+        btnStart.setOnClickListener {
+
+        }
+
+        btnStop.setOnClickListener { }
+
     }
 }

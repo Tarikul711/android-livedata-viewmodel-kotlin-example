@@ -1,15 +1,39 @@
 package com.tos.androidlivedataviewmodel
 
+import android.os.CountDownTimer
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 /**
  *Created by tarikul on 14/9/20
  */
 
-class MainActivityViewModel: ViewModel() {
+class MainActivityViewModel : ViewModel() {
     var counter: Int = 0;
 
     fun addValue() {
         counter++
+    }
+
+    lateinit var timer: CountDownTimer
+    var second = MutableLiveData<Int>()
+
+    fun seconds(): LiveData<Int> {
+        return second
+    }
+
+    fun startTimer() {
+        timer = object : CountDownTimer(10000, 1000) {
+            override fun onFinish() {
+
+            }
+
+            override fun onTick(p0: Long) {
+                val timeLeft = p0 / 1000
+                second.value = timeLeft.toInt()
+            }
+
+        }.start()
     }
 }
