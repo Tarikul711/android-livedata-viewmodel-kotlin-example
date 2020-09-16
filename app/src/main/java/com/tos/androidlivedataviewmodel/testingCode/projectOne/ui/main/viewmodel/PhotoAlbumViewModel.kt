@@ -3,8 +3,13 @@ package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.viewmode
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.repository.PhotoAlbumRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Response
 
 /**
  *Created by tarikul on 16/9/20
@@ -15,6 +20,8 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
     var photoAlbums = MutableLiveData<List<PhotoModel>>()
 
     fun getPhotoAlbum() {
-        photoAlbums.value = photoAlbumRepository.getPhotoAlbum()
+        CoroutineScope(Dispatchers.IO).launch {
+            photoAlbums.value = photoAlbumRepository.getPhotoAlbum()
+        }
     }
 }

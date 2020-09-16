@@ -8,5 +8,5 @@ import com.tos.myapplication.data.api.ApiHelper
 
 class PhotoAlbumRepository(private var apiHelper: ApiHelper) {
 
-    fun getPhotoAlbum ()= apiHelper.getPhotoAlbum()
+    suspend fun getPhotoAlbum ()= apiHelper.getPhotoAlbum()
 }

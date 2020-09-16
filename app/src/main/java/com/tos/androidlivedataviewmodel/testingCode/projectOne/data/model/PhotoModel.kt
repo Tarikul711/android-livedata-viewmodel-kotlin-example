@@ -5,7 +5,6 @@ package com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model
  */
 
 data class PhotoModel(
-
     val albumId: Int,
     val id: Int,
     val title: String,

@@ -1,7 +1,5 @@
 package com.tos.myapplication.data.api
 
-
-import android.util.Log
 import com.tos.android_retrofit_mvvm_jetpack_kotlin.MyApplication
 import com.tos.android_retrofit_mvvm_jetpack_kotlin.utils.NetworkUtils
 import okhttp3.*
