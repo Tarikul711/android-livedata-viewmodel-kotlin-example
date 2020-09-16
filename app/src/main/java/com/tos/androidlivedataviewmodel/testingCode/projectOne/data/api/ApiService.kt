@@ -8,6 +8,6 @@ import retrofit2.http.POST
 
 interface ApiService {
     @POST("photos")
-    fun getProductsOld(): PhotoModel
+    fun getPhotoAlbum(): PhotoModel
 
 }
