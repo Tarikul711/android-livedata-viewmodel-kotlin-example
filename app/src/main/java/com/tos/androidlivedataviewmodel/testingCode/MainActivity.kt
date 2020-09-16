@@ -1,4 +1,4 @@
-package com.tos.androidlivedataviewmodel
+package com.tos.androidlivedataviewmodel.testingCode
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tos.android_retrofit_mvvm_jetpack_kotlin.ui.base.ViewModelFactory
+import com.tos.androidlivedataviewmodel.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
