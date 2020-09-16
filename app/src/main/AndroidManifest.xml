@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--        <activity android:name=".testingCode.projectOne.ui.main.PhotoAlbumActivity"></activity>-->
-        <activity android:name=".testingCode.projectOne.ui.main.PhotoAlbumActivity">
+        <activity android:name=".testingCode.projectOne.ui.main.view.PhotoAlbumActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,15 +1,13 @@
-package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main
+package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tos.androidlivedataviewmodel.R
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.base.ViewModelFactory
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.viewmodel.PhotoAlbumViewModel
 import com.tos.myapplication.data.api.ApiHelper
 import com.tos.myapplication.data.api.RetrofitBuilder
-import kotlinx.android.synthetic.main.activity_photo_album.*
 
 class PhotoAlbumActivity : AppCompatActivity() {
 
