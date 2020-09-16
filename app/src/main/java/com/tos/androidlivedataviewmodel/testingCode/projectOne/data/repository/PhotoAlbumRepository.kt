@@ -6,7 +6,7 @@ import com.tos.myapplication.data.api.ApiHelper
  *Created by tarikul on 16/9/20
  */
 
-class PhotoAlbumRepository(var apiHelper: ApiHelper) {
+class PhotoAlbumRepository(private var apiHelper: ApiHelper) {
 
     fun getPhotoAlbum ()= apiHelper.getPhotoAlbum()
 }
