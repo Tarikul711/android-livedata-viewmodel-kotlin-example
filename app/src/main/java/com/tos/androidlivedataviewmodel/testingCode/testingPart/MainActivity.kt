@@ -1,4 +1,4 @@
-package com.tos.androidlivedataviewmodel.testingCode
+package com.tos.androidlivedataviewmodel.testingCode.testingPart
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
