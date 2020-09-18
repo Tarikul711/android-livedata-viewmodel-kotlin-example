@@ -18,15 +18,15 @@ import kotlinx.android.synthetic.main.item_photo.view.*
  *Created by tarikul on 6/9/20
  */
 
-class PhotoAlbumAdapter(private val photoAlbums: ArrayList<PhotoModel>) :
+class PhotoAlbumAdapter(private val photoAlbums: List<PhotoModel>) :
     RecyclerView.Adapter<PhotoAlbumAdapter.DataViewHolder>() {
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(result: PhotoModel) {
             itemView.apply {
-                tvTitle.text = result.title
-                Glide.with(ivImage.context)
+//                tvTitle.text = result.name
+                /*Glide.with(ivImage.context)
                     .load(result.url)
-                    .into(ivImage)
+                    .into(ivImage)*/
             }
         }
 
