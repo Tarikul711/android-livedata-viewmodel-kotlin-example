@@ -2,6 +2,7 @@ package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,10 +31,12 @@ class PhotoAlbumActivity : AppCompatActivity() {
 
         viewModel.getPhotoAlbum()
 
-//        recyclerView.layoutManager = LinearLayoutManager(this)
-/*        viewModel.photoAlbums.observe(this, Observer {
-//            adapter = PhotoAlbumAdapter(it)
-//            recyclerView.adapter = adapter
-        })*/
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        viewModel.photoAlbums.observe(this, Observer {
+            adapter = PhotoAlbumAdapter(it)
+            Log.e("tarikul", "Size-->  " + it.size)
+            recyclerView.adapter = adapter
+            adapter.notifyDataSetChanged()
+        })
     }
 }

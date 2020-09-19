@@ -4,7 +4,7 @@ package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.adapter
  *Created by tarikul on 16/9/20
  */
 
-
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,10 +23,11 @@ class PhotoAlbumAdapter(private val photoAlbums: List<PhotoModel>) :
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(result: PhotoModel) {
             itemView.apply {
-//                tvTitle.text = result.name
+                tvTitle.text = result.title
                 /*Glide.with(ivImage.context)
-                    .load(result.url)
-                    .into(ivImage)*/
+                    .load(Uri.parse(result.url))
+                    .into(ivImage)
+*/
             }
         }
 

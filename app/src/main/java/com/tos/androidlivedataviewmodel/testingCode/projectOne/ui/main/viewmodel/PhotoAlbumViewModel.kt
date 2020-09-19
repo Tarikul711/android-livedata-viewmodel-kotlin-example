@@ -7,9 +7,11 @@ import androidx.lifecycle.liveData
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.repository.PhotoAlbumRepository
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import kotlin.coroutines.CoroutineContext
 
 /**
  *Created by tarikul on 16/9/20
@@ -21,7 +23,8 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
 
     fun getPhotoAlbum() {
         CoroutineScope(Dispatchers.IO).launch {
-            photoAlbums.value = photoAlbumRepository.getPhotoAlbum()
+//            photoAlbums.value = photoAlbumRepository.getPhotoAlbum()
+            photoAlbums.postValue(photoAlbumRepository.getPhotoAlbum())
         }
     }
 }
