@@ -3,6 +3,7 @@ package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -35,6 +36,8 @@ class PhotoAlbumActivity : AppCompatActivity() {
         viewModel.photoAlbums.observe(this, Observer {
             adapter = PhotoAlbumAdapter(it)
             recyclerView.adapter = adapter
+            progressBar.visibility = View.GONE
+            recyclerView.visibility=View.VISIBLE
             adapter.notifyDataSetChanged()
         })
     }
