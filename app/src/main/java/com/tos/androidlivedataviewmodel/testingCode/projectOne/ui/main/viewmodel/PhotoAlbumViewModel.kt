@@ -21,10 +21,7 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
 
     var photoAlbums = MutableLiveData<List<PhotoModel>>()
 
-    fun getPhotoAlbum() {
-        CoroutineScope(Dispatchers.IO).launch {
-//            photoAlbums.value = photoAlbumRepository.getPhotoAlbum()
-            photoAlbums.postValue(photoAlbumRepository.getPhotoAlbum())
-        }
+    fun getPhotoAlbum() = CoroutineScope(Dispatchers.IO).launch {
+        photoAlbums.postValue(photoAlbumRepository.getPhotoAlbum())
     }
 }

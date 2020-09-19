@@ -34,7 +34,6 @@ class PhotoAlbumActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         viewModel.photoAlbums.observe(this, Observer {
             adapter = PhotoAlbumAdapter(it)
-            Log.e("tarikul", "Size-->  " + it.size)
             recyclerView.adapter = adapter
             adapter.notifyDataSetChanged()
         })
