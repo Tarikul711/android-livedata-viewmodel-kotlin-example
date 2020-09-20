@@ -2,12 +2,14 @@ package com.tos.androidlivedataviewmodel.testingCode.testingPart
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.tos.android_retrofit_mvvm_jetpack_kotlin.ui.base.ViewModelFactory
 import com.tos.androidlivedataviewmodel.R
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,5 +47,9 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Timer Finished", Toast.LENGTH_LONG).show()
             }
         })
+
+        thread {
+            Thread.sleep(1000)
+        }
     }
 }

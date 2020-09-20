@@ -24,4 +24,6 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
     fun getPhotoAlbum() = CoroutineScope(Dispatchers.IO).launch {
         photoAlbums.postValue(photoAlbumRepository.getPhotoAlbum())
     }
+
+
 }

@@ -5,6 +5,7 @@ package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.adapter
  */
 
 import android.net.Uri
+import android.text.method.TextKeyListener.clear
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +14,9 @@ import com.bumptech.glide.Glide
 import com.tos.androidlivedataviewmodel.R
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
 import kotlinx.android.synthetic.main.item_photo.view.*
+import java.util.Collections.addAll
 
-/**
- *Created by tarikul on 6/9/20
- */
-
-class PhotoAlbumAdapter(private val photoAlbums: List<PhotoModel>) :
+class PhotoAlbumAdapter(private var photoAlbums: ArrayList<PhotoModel>) :
     RecyclerView.Adapter<PhotoAlbumAdapter.DataViewHolder>() {
     class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(result: PhotoModel) {
@@ -50,10 +48,10 @@ class PhotoAlbumAdapter(private val photoAlbums: List<PhotoModel>) :
         holder.bind(photoAlbums[position])
     }
 
-    /*  fun addProducts(results: List<Results>) {
-          this.products.apply {
-              clear()
-              addAll(results)
-          }
-      }*/
+    fun addAllAlbums(result: List<PhotoModel>) {
+        this.photoAlbums.apply {
+            clear()
+            addAll(result)
+        }
+    }
 }

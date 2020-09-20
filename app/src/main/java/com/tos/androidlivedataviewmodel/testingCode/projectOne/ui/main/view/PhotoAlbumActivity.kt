@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.tos.androidlivedataviewmodel.R
+import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.base.ViewModelFactory
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.adapter.PhotoAlbumAdapter
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.viewmodel.PhotoAlbumViewModel
@@ -33,12 +34,19 @@ class PhotoAlbumActivity : AppCompatActivity() {
         viewModel.getPhotoAlbum()
 
         recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = PhotoAlbumAdapter(arrayListOf())
+        recyclerView.adapter = adapter
         viewModel.photoAlbums.observe(this, Observer {
-            adapter = PhotoAlbumAdapter(it)
-            recyclerView.adapter = adapter
             progressBar.visibility = View.GONE
-            recyclerView.visibility=View.VISIBLE
-            adapter.notifyDataSetChanged()
+            recyclerView.visibility = View.VISIBLE
+            bindDataWithAdapter(it)
         })
+    }
+
+    private fun bindDataWithAdapter(results: List<PhotoModel>) {
+        adapter.apply {
+            addAllAlbums(results)
+            notifyDataSetChanged()
+        }
     }
 }
