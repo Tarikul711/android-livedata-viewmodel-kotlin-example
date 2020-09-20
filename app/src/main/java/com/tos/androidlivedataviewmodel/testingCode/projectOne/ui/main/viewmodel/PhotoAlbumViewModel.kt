@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
 import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.repository.PhotoAlbumRepository
+import com.tos.androidlivedataviewmodel.testingCode.projectOne.utils.Resource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
@@ -24,4 +25,12 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
         photoAlbums.postValue(photoAlbumRepository.getPhotoAlbum())
     }
 
+   fun getAllPhotos()= liveData {
+       emit(Resource.loading(data = null))
+       try {
+          emit(Resource.success(data = photoAlbumRepository.getPhotoAlbum()))
+       }catch (exception:Exception){
+           emit(Resource.error(data = null,message = exception.message?:"Error Occurred"))
+       }
+   }
 }
