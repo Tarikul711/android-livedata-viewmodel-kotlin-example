@@ -20,10 +20,8 @@ import kotlin.coroutines.CoroutineContext
 class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : ViewModel() {
 
     var photoAlbums = MutableLiveData<List<PhotoModel>>()
-
     fun getPhotoAlbum() = CoroutineScope(Dispatchers.IO).launch {
         photoAlbums.postValue(photoAlbumRepository.getPhotoAlbum())
     }
-
 
 }

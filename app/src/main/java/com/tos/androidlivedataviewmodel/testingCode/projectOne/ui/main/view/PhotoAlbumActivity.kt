@@ -41,6 +41,7 @@ class PhotoAlbumActivity : AppCompatActivity() {
             recyclerView.visibility = View.VISIBLE
             bindDataWithAdapter(it)
         })
+
     }
 
     private fun bindDataWithAdapter(results: List<PhotoModel>) {
