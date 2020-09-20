@@ -19,18 +19,12 @@ import kotlin.coroutines.CoroutineContext
  */
 
 class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : ViewModel() {
-
-    var photoAlbums = MutableLiveData<List<PhotoModel>>()
-    fun getPhotoAlbum() = CoroutineScope(Dispatchers.IO).launch {
-        photoAlbums.postValue(photoAlbumRepository.getPhotoAlbum())
+    fun getAllPhotos() = liveData {
+        emit(Resource.loading(data = null))
+        try {
+            emit(Resource.success(data = photoAlbumRepository.getPhotoAlbum()))
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred"))
+        }
     }
-
-   fun getAllPhotos()= liveData {
-       emit(Resource.loading(data = null))
-       try {
-          emit(Resource.success(data = photoAlbumRepository.getPhotoAlbum()))
-       }catch (exception:Exception){
-           emit(Resource.error(data = null,message = exception.message?:"Error Occurred"))
-       }
-   }
 }
