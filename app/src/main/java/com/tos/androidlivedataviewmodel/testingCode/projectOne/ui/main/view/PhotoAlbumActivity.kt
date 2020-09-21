@@ -46,7 +46,6 @@ class PhotoAlbumActivity : AppCompatActivity() {
                     Status.ERROR -> {
                         progressBar.visibility = View.GONE
                         recyclerView.visibility = View.VISIBLE
-                        Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show();
                     }
                     Status.LOADING -> {
                         progressBar.visibility = View.VISIBLE
