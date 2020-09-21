@@ -25,11 +25,24 @@ class NavigationActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         navigationView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, drawerLayout)
-        listener=NavController.OnDestinationChangedListener{controller, destination, arguments ->
-            if(destination.id==R.id.firstFragment){
+        listener =
+            NavController.OnDestinationChangedListener { controller, destination, arguments ->
+                if (destination.id == R.id.firstFragment) {
 
-            }elseif
-        }
+                } else if (destination.id == R.id.secondFragment) {
+
+                }
+            }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        navController.addOnDestinationChangedListener(listener)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        navController.removeOnDestinationChangedListener(listener)
     }
 
     override fun onSupportNavigateUp(): Boolean {
