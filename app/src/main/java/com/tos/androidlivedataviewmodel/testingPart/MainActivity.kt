@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
 
         val viewModel =
             ViewModelProvider(this, ViewModelFactory()).get(MainActivityViewModel::class.java)
-        textView.text = viewModel.counter.toString()
+        textViewSecond.text = viewModel.counter.toString()
         btnAdd.setOnClickListener {
             viewModel.addValue()
-            textView.text = viewModel.counter.toString()
+            textViewSecond.text = viewModel.counter.toString()
         }
 
 

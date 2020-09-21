@@ -22,5 +22,9 @@
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />
+        <argument
+            android:name="my_number"
+            app:argType="integer"
+            android:defaultValue="2" />
     </fragment>
 </navigation>
