@@ -1,20 +1,17 @@
-package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.view
+package com.tos.androidlivedataviewmodel.projectOne.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.tos.androidlivedataviewmodel.R
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.base.ViewModelFactory
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.adapter.PhotoAlbumAdapter
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.viewmodel.PhotoAlbumViewModel
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.utils.Status
+import com.tos.androidlivedataviewmodel.projectOne.data.model.PhotoModel
+import com.tos.androidlivedataviewmodel.projectOne.ui.base.ViewModelFactory
+import com.tos.androidlivedataviewmodel.projectOne.ui.main.adapter.PhotoAlbumAdapter
+import com.tos.androidlivedataviewmodel.projectOne.ui.main.viewmodel.PhotoAlbumViewModel
+import com.tos.androidlivedataviewmodel.projectOne.utils.Status
 import com.tos.myapplication.data.api.ApiHelper
 import com.tos.myapplication.data.api.RetrofitBuilder
 import kotlinx.android.synthetic.main.activity_photo_album.*

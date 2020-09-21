@@ -1,4 +1,4 @@
-package com.tos.androidlivedataviewmodel.testingCode.projectOne.utils
+package com.tos.androidlivedataviewmodel.projectOne.utils
 
 /**
  *Created by tarikul on 20/9/20

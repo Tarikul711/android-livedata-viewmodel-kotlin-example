@@ -1,8 +1,7 @@
 package com.tos.myapplication.data.api
 
 
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
-import retrofit2.Response
+import com.tos.androidlivedataviewmodel.projectOne.data.model.PhotoModel
 import retrofit2.http.GET
 
 interface ApiService {

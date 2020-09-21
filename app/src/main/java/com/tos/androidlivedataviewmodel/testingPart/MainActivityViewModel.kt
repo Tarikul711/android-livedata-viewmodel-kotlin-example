@@ -1,4 +1,4 @@
-package com.tos.androidlivedataviewmodel.testingCode.testingPart
+package com.tos.androidlivedataviewmodel.testingPart
 
 import android.os.CountDownTimer
 import androidx.lifecycle.LiveData

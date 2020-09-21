@@ -1,4 +1,4 @@
-package com.tos.androidlivedataviewmodel.testingCode.navigation
+package com.tos.androidlivedataviewmodel.navigation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

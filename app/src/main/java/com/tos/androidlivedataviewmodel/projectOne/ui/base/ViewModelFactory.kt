@@ -1,9 +1,9 @@
-package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.base
+package com.tos.androidlivedataviewmodel.projectOne.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.repository.PhotoAlbumRepository
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.viewmodel.PhotoAlbumViewModel
+import com.tos.androidlivedataviewmodel.projectOne.data.repository.PhotoAlbumRepository
+import com.tos.androidlivedataviewmodel.projectOne.ui.main.viewmodel.PhotoAlbumViewModel
 import com.tos.myapplication.data.api.ApiHelper
 
 /**

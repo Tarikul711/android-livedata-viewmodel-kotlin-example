@@ -1,20 +1,16 @@
-package com.tos.androidlivedataviewmodel.testingCode.projectOne.ui.main.adapter
+package com.tos.androidlivedataviewmodel.projectOne.ui.main.adapter
 
 /**
  *Created by tarikul on 16/9/20
  */
 
-import android.net.Uri
-import android.text.method.TextKeyListener.clear
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.tos.androidlivedataviewmodel.R
-import com.tos.androidlivedataviewmodel.testingCode.projectOne.data.model.PhotoModel
+import com.tos.androidlivedataviewmodel.projectOne.data.model.PhotoModel
 import kotlinx.android.synthetic.main.item_photo.view.*
-import java.util.Collections.addAll
 
 class PhotoAlbumAdapter(private var photoAlbums: ArrayList<PhotoModel>) :
     RecyclerView.Adapter<PhotoAlbumAdapter.DataViewHolder>() {

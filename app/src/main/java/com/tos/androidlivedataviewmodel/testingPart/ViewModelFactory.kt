@@ -2,7 +2,7 @@ package com.tos.android_retrofit_mvvm_jetpack_kotlin.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.tos.androidlivedataviewmodel.testingCode.testingPart.MainActivityViewModel
+import com.tos.androidlivedataviewmodel.testingPart.MainActivityViewModel
 
 /**
  *Created by tarikul on 5/9/20
