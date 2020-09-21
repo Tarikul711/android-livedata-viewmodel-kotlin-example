@@ -6,6 +6,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.tos.androidlivedataviewmodel.R
@@ -15,7 +16,7 @@ class NavigationActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
-//    private lateinit var drawerLayout:DrawerLayout
+    private lateinit var listener: NavController.OnDestinationChangedListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,16 @@ class NavigationActivity : AppCompatActivity() {
         navController = findNavController(R.id.fragment)
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         navigationView.setupWithNavController(navController)
-        setupActionBarWithNavController(navController,drawerLayout)
+        setupActionBarWithNavController(navController, drawerLayout)
+        listener=NavController.OnDestinationChangedListener{controller, destination, arguments ->
+            if(destination.id==R.id.firstFragment){
+
+            }elseif
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration)
+                || super.onSupportNavigateUp()
     }
 }
