@@ -7,7 +7,12 @@
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.tos.androidlivedataviewmodel.FirstFragment"
+        android:name="com.tos.androidlivedataviewmodel.navigation.fragment.FirstFragment"
         android:label="fragment_first"
         tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.tos.androidlivedataviewmodel.navigation.fragment.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
 </navigation>
