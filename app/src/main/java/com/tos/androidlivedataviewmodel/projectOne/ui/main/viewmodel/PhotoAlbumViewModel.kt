@@ -19,6 +19,9 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
 
     private var photoAlbum = MutableLiveData<Resource<List<PhotoModel>>>();
 
+    init {
+        getAllPhotos()
+    }
     fun getAllPhotos() = viewModelScope.launch {
         photoAlbum.postValue(Resource.loading(data = null))
         photoAlbumRepository.getPhotoAlbum()

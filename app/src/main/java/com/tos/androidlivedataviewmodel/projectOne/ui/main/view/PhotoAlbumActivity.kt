@@ -53,7 +53,7 @@ class PhotoAlbumActivity : AppCompatActivity() {
     }
 
     private fun setupObserver() {
-        viewModel.getAllPhotos().observe(this, Observer {
+       /* viewModel.getAllPhotos().observe(this, Observer {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {
@@ -71,6 +71,6 @@ class PhotoAlbumActivity : AppCompatActivity() {
                     }
                 }
             }
-        })
+        })*/
     }
 }
