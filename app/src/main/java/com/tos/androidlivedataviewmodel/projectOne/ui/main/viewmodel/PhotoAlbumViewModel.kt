@@ -1,5 +1,6 @@
 package com.tos.androidlivedataviewmodel.projectOne.ui.main.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
@@ -7,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.tos.androidlivedataviewmodel.projectOne.data.model.PhotoModel
 import com.tos.androidlivedataviewmodel.projectOne.data.repository.PhotoAlbumRepository
 import com.tos.androidlivedataviewmodel.projectOne.utils.Resource
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -27,9 +29,9 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
         photoAlbum.postValue(Resource.loading(data = null))
         photoAlbumRepository.getPhotoAlbum()
             .catch { photoAlbum.postValue(Resource.error(null, "Error Occurred")) }
-            .collect { photoAlbum.postValue(Resource.success(it)) }
-
-
+            .collect {
+                photoAlbum.postValue(Resource.success(it))
+            }
         /* emit(Resource.loading(data = null))
          try {
              emit(Resource.success(data = photoAlbumRepository.getPhotoAlbum()))
