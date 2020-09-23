@@ -22,7 +22,8 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
     init {
         getAllPhotos()
     }
-    fun getAllPhotos() = viewModelScope.launch {
+
+    private fun getAllPhotos() = viewModelScope.launch {
         photoAlbum.postValue(Resource.loading(data = null))
         photoAlbumRepository.getPhotoAlbum()
             .catch { photoAlbum.postValue(Resource.error(null, "Error Occurred")) }
@@ -37,7 +38,7 @@ class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : View
          }*/
     }
 
-    private fun getPhotoData(): MutableLiveData<Resource<List<PhotoModel>>> {
+    fun getPhotoData(): MutableLiveData<Resource<List<PhotoModel>>> {
         return photoAlbum
     }
 }

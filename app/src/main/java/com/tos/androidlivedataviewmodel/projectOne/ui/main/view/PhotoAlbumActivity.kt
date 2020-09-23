@@ -72,5 +72,7 @@ class PhotoAlbumActivity : AppCompatActivity() {
                 }
             }
         })*/
+
+        viewModel.getAllPhotos().
     }
 }
