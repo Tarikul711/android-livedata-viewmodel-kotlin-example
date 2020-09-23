@@ -10,6 +10,8 @@ import com.tos.androidlivedataviewmodel.projectOne.utils.Resource
  */
 
 class PhotoAlbumViewModel(var photoAlbumRepository: PhotoAlbumRepository) : ViewModel() {
+
+
     fun getAllPhotos() = liveData {
         emit(Resource.loading(data = null))
         try {

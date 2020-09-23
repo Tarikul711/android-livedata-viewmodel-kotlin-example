@@ -1,7 +1,10 @@
 package com.tos.myapplication.data.api
 
-class ApiHelper(private val apiService: ApiService) {
+import com.tos.androidlivedataviewmodel.projectOne.data.model.PhotoModel
+import kotlinx.coroutines.flow.Flow
 
-    suspend fun getPhotoAlbum() = apiService.getPhotoAlbum()
+interface ApiHelper {
+
+    suspend fun getPhotoAlbum(): Flow<List<PhotoModel>>
 
 }
