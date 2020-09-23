@@ -73,6 +73,8 @@ class PhotoAlbumActivity : AppCompatActivity() {
             }
         })*/
 
-        viewModel.getAllPhotos().
+        viewModel.getPhotoData().observe(this, Observer {
+
+        })
     }
 }
