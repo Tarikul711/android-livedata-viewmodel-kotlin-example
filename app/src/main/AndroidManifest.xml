@@ -15,21 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.tos.androidlivedataviewmodel.navigation.NavigationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!-- <activity android:name=".testingCode.projectOne.ui.main.PhotoAlbumActivity"></activity> -->
-    <!--    <activity android:name=".testingCode.projectOne.ui.main.view.PhotoAlbumActivity">
+        <!--<activity android:name="com.tos.androidlivedataviewmodel.navigation.NavigationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>-->
+        <!-- <activity android:name=".testingCode.projectOne.ui.main.PhotoAlbumActivity"></activity> -->
+        <activity android:name=".projectOne.ui.main.view.PhotoAlbumActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
