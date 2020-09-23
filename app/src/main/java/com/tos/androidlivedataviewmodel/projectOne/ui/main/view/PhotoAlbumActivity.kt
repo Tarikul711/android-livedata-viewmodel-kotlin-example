@@ -53,8 +53,8 @@ class PhotoAlbumActivity : AppCompatActivity() {
     }
 
     private fun setupObserver() {
-       /* viewModel.getAllPhotos().observe(this, Observer {
-            it?.let { resource ->
+        viewModel.getPhotoData().observe(this, Observer {
+            it.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {
                         progressBar.visibility = View.GONE
@@ -70,11 +70,8 @@ class PhotoAlbumActivity : AppCompatActivity() {
                         recyclerView.visibility = View.GONE
                     }
                 }
+
             }
-        })*/
-
-        viewModel.getPhotoData().observe(this, Observer {
-
         })
     }
 }
