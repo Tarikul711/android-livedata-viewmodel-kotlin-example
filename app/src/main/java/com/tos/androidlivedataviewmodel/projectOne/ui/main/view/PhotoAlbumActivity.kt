@@ -2,7 +2,9 @@ package com.tos.androidlivedataviewmodel.projectOne.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,15 +25,33 @@ class PhotoAlbumActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo_album)
+        setupUI()
+        setupViewModel()
+        setupObserver()
+    }
 
+    private fun setupUI() {
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = PhotoAlbumAdapter(arrayListOf())
+        recyclerView.adapter = adapter
+    }
+
+    private fun bindDataWithAdapter(results: List<PhotoModel>) {
+        adapter.apply {
+            addAllAlbums(results)
+            notifyDataSetChanged()
+        }
+    }
+
+    private fun setupViewModel() {
         viewModel =
             ViewModelProvider(this, ViewModelFactory(ApiHelper(RetrofitBuilder.apiService)))
                 .get(
                     PhotoAlbumViewModel::class.java
                 )
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = PhotoAlbumAdapter(arrayListOf())
-        recyclerView.adapter = adapter
+    }
+
+    private fun setupObserver() {
         viewModel.getAllPhotos().observe(this, Observer {
             it?.let { resource ->
                 when (resource.status) {
@@ -51,12 +71,5 @@ class PhotoAlbumActivity : AppCompatActivity() {
                 }
             }
         })
-    }
-
-    private fun bindDataWithAdapter(results: List<PhotoModel>) {
-        adapter.apply {
-            addAllAlbums(results)
-            notifyDataSetChanged()
-        }
     }
 }
