@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tos.androidlivedataviewmodel.R
+import com.tos.androidlivedataviewmodel.projectOne.data.api.ApiHelperImpl
 import com.tos.androidlivedataviewmodel.projectOne.data.model.PhotoModel
 import com.tos.androidlivedataviewmodel.projectOne.ui.base.ViewModelFactory
 import com.tos.androidlivedataviewmodel.projectOne.ui.main.adapter.PhotoAlbumAdapter
@@ -45,7 +46,7 @@ class PhotoAlbumActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         viewModel =
-            ViewModelProvider(this, ViewModelFactory(ApiHelper(RetrofitBuilder.apiService)))
+            ViewModelProvider(this, ViewModelFactory(ApiHelperImpl(RetrofitBuilder.apiService)))
                 .get(
                     PhotoAlbumViewModel::class.java
                 )
