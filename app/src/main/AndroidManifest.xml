@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".testingPart.ConstraintActivity"></activity>
+        <!--        <activity android:name=".testingPart.ConstraintActivity"></activity>-->
         <!--
         <activity android:name="com.tos.androidlivedataviewmodel.navigation.NavigationActivity">
             <intent-filter>
@@ -26,7 +26,7 @@
         </activity>
         -->
         <!-- <activity android:name=".testingCode.projectOne.ui.main.PhotoAlbumActivity"></activity> -->
-        <activity android:name=".projectOne.ui.main.view.PhotoAlbumActivity">
+        <activity android:name=".testingPart.ConstraintActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
